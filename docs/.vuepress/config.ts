@@ -51,19 +51,24 @@ const watcher = chokidar.watch('docs',{
 
 // 文件初始化状态
 let ready = false
+// 限制对特殊文件不进行操作
+const settingDocuments = ["images","img"]
 // 
 watcher
   .on('addDir', (path_) => {
     if(ready) {
       const urlPath = path_.replace(/\\/g,'/')
       console.log(urlPath,":urlPath");
-      fs.writeFile(path.resolve(`${urlPath}/`)+'/README.md',`# ${urlPath}`,function(err) {
-        if(err) {
-          console.error(err);
-        }
-        console.log("写入成功！");
-      })
-      console.log(path_,":----------path_");
+      const isFlag = settingDocuments.every(item => urlPath.indexOf(`${item}`) === -1)
+      console.log(isFlag,":isFlag");
+      if(isFlag) {
+        fs.writeFile(path.resolve(`${urlPath}/`)+'/README.md',`# ${urlPath}`,function(err) {
+          if(err) {
+            console.error(err);
+          }
+          console.log("写入成功！");
+        })
+      }
     }
   })
   .on('ready', () => {
