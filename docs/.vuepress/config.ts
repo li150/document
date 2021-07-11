@@ -96,8 +96,8 @@ export default defineUserConfig<DefaultThemeOptions>({
           {
             text: 'SubGroup',
             children: [
-              '/guide/frist/FRIST.html',
-              '/guide/second/SECOND.html'
+              '/guide/frist/',
+              '/guide/second/'
             ]
           },
         ],
@@ -111,11 +111,10 @@ export default defineUserConfig<DefaultThemeOptions>({
           children: [
             {
               text: 'FRIST',
-              link: '/guide/frist/FRIST.html',
-              children: ['/guide/frist/FRIST1.html','/guide/frist/FRIST2.html']
+              link: '/guide/frist/'
             },
             // '/guide/frist/FRIST.html',
-            '/guide/second/SECOND.html'
+            '/guide/second/'
           ]
         }
       ]
