@@ -14,7 +14,7 @@ const filePath = path.resolve('./docs');
 const fileArr = []
 //文件遍历方法
 function fileDisplay(filePath) {
-    //根据文件路径读取文件，返回文件列表 777
+    //根据文件路径读取文件，返回文件列表 777888
     fs.readdir(filePath,function(err,files){
         if(err) {
             console.warn(err)
