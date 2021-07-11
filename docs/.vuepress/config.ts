@@ -53,7 +53,6 @@ const watcher = chokidar.watch('docs',{
 let ready = false
 // 限制对特殊文件不进行操作
 const settingDocuments = ["images","img"]
-// 
 watcher
   .on('addDir', (path_) => {
     if(ready) {
@@ -75,25 +74,6 @@ watcher
     console.info('文件初始化完成...');
     ready = true
   })
-  // .on('addDir',function(paths) {
-  //   const urlPath = paths.replace(/\\/g,'/')
-  //   console.log(urlPath,":urlPath");
-  //   // console.log(fileArr,";fileArr");
-    
-  //   for (const item of fileArr) {
-  //     // console.log(item,":item",item.indexOf(`${urlPath}`));
-  //     if(item.indexOf(`${urlPath}`) === -1) {
-  //       console.log(item,":item");
-  //       // fs.writeFile(path.resolve(`${urlPath}/`)+'/README.md',`# ${urlPath}`,function(err) {
-  //       //   if(err) {
-  //       //     console.error(err);
-  //       //   }
-  //       //   console.log("写入成功！");
-  //       // })
-  //     }
-  //   }
-    
-  // })
 
 
 export default defineUserConfig<DefaultThemeOptions>({
